@@ -12,3 +12,5 @@ bootstrap
 accounts-password
 accounts-facebook
 accounts-google
+ace
+coffeescript

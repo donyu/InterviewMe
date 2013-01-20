@@ -1,3 +1,5 @@
+Questions = new Meteor.Collection('questions');
+
 if (Meteor.isClient) {
   Template.hello.greeting = function () {
     return "Welcome to interview_me.";
