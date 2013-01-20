@@ -29,6 +29,24 @@
       </div>
     </div>
   </div>
-  {{renderPage}}
+    
+  <div class="container">
+    {{> tmp}}
+
+    <hr>
+
+    <footer>
+      <p>Developed by Don Yu & Jon Jia at the 2013 Spring PennApps</p>
+    </footer>
+
+  </div>
+
 </body>
 
+<template name="tmp">
+{{#if route}}
+  {{> index}}
+{{else}}
+  {{> profile}}
+{{/if}}
+</template>
