@@ -9,7 +9,7 @@ if (Meteor.isClient) {
       if (typeof console !== 'undefined')
         console.log("You pressed the button");
     }
-  });
+ });
 }
 
 if (Meteor.isServer) {
