@@ -5,34 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
+  <style type="text/css" media="screen">
+      #editor { 
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+  </style>
   <script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js'></script>
-  <script src='ace.js'></script>
 </head>
 
 <body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="index.html">Interview Me</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <ul class="nav pull-right">
-            <li><a>{{loginButtons align="left"}}</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  </div>
-    
-  <div class="container">
     {{> tmp}}
 
     <hr>
@@ -46,10 +31,14 @@
 </body>
 
 <template name="tmp">
-{{#if route}}
+{{#if index_route}}
   {{> index}}
-{{else}}
+{{/if}}
+{{#if profile_route}}
   {{> profile}}
+{{/if}}
+{{#if interviewee_route}}
+  {{> interviewee}}
 {{/if}}
 </template>
 
@@ -60,23 +49,31 @@
 </template>
 
 <template name="tokBox">
-	<div id="myPublisherDiv"></div>
-    <script type="text/javascript">
-    // Initialize API key, session, and token...
-    // Think of a session as a room, and a token as the key to get in to the room
-    // Sessions and tokens are generated on your server and passed down to the client
-    var apiKey = "22601652";
-    var sessionId = "1_MX4yMjYwMTY1Mn4xMjcuMC4wLjF-U3VuIEphbiAyMCAwMDoyODo1NSBQU1QgMjAxM34wLjI0ODI3NDQ1fg";
-    var token = "T1==cGFydG5lcl9pZD0yMjYwMTY1MiZzaWc9YmFiOGM0MzYxMDRhODQ3M2ZlYzNmMWE2ZDIwYTUzMTliOWI3ODQ1MzpzZXNzaW9uX2lkPTFfTVg0eU1qWXdNVFkxTW40eE1qY3VNQzR3TGpGLVUzVnVJRXBoYmlBeU1DQXdNRG95T0RvMU5TQlFVMVFnTWpBeE0zNHdMakkwT0RJM05EUTFmZyZjcmVhdGVfdGltZT0xMzU4NjcwNTQzJmV4cGlyZV90aW1lPTEzNTg3NTY5NDMmcm9sZT1wdWJsaXNoZXImbm9uY2U9ODg4ODU3JnNka192ZXJzaW9uPXRiLWRhc2hib2FyZC1qYXZhc2NyaXB0LXYx";
+  <div class="span4" id="myPublisherDiv">
+  </div>
+  {{run_tokBox}}
+</template>
 
-    // Initialize session, set up event listeners, and connect
-    var session = TB.initSession(sessionId);
-    session.addEventListener('sessionConnected', sessionConnectedHandler);
-    session.connect(apiKey, token);
-    
-    function sessionConnectedHandler(event) {
-        var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
-        session.publish(publisher);
+<template name="editor">
+  <div class="span8">
+  <h2>Mock Interview with {{other}}</h2>
+  <div class="ace_editor_wrapper">
+    <div id="ace_editor_demo">/**
+     * In fact, you're looking at ACE right now. Go ahead and play with it!
+     *
+     * We are currently showing off the JavaScript mode. ACE has support for 45
+     * language modes and 24 color themes!
+     */
+
+    function add(x, y) {
+        var resultString = "Hello, ACE! The result of your math is: ";
+        var result = x + y;
+        return resultString + result;
     }
-    </script>
+
+    var addResult = add(3, 2);
+    console.log(addResult);
+      </div>
+    </div>
+  </div>
 </template>

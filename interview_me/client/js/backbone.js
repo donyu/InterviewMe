@@ -1,7 +1,10 @@
 var BackboneRouter = Backbone.Router.extend({
   routes: {
     "":                 "main", //this will be http://your_domain/
-    "profile":           "profile"  // http://your_domain/help
+    "profile":           "profile",  // http://your_domain/help
+    "index.html":       "main",
+    "interviewer.html":   "interviewer",
+    "interviewee.html":   "interviewee"
   },
 
   main: function() {
@@ -12,7 +15,17 @@ var BackboneRouter = Backbone.Router.extend({
 
   profile: function() {
     // Profile page
-    Session.set("currentPage", "profile")
+    Session.set("currentPage", "profile");
+  },
+
+  interviewer: function() {
+    // Interviewer page
+    Session.set("currentPage", "interviewer");
+  },
+
+  interviewee: function() {
+    // Interviewee page
+    Session.set("currentPage", "interviewee");
   }
 });
 

@@ -1,4 +1,35 @@
 <template name="interviewee">
-	<h1>Welcome to Interview Me!</h1>
-	<p>The collaborative and interactive interview prep website.</p>
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+	      <a class="brand" href="index.html">Interview Me</a>
+	      <div class="nav-collapse">
+	        <ul class="nav">
+	          <li class="active"><a href="profile.html">Profile</a></li>
+	          <li><a href="interviewer.html">Interviewer</a></li>
+	          <li><a href="interviewee.html">Interviewee</a></li>
+	          <li><a href="contact.html">Contact</a></li>
+	        </ul>
+	        <ul class="nav pull-right">
+	          <li><a>{{loginButtons align="left"}}</a></li>
+	        </ul>
+	      </div><!--/.nav-collapse -->
+	    </div>
+	  </div>
+	</div>
+
+	<br/>
+	<br/>
+	<br/>
+
+	<div class="container">
+		<div class="row">
+				{{> tokBox}}
+				{{> editor}}
+		</div>
 </template>

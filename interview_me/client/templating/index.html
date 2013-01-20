@@ -1,13 +1,41 @@
 <template name="index">
-	<div class="hero-unit">
-	  <h1>Welcome to Interview Me!</h1>
-	  <img src="img/volunteers.gif" height="260" width="260" align="right">        
-	  <hr color="#94D1CA">
-	  <p>Volunteer NOW : fill in your schedule with a few simple clicks and receive emails with volunteer opportunities that match your availabilities and interests. Perfect for the busy college student with a hectic schedule but a giving heart. We solve the logistics for you...Volunteer NOW!</p>
-	  <p>
-	    <br/>
-	    <a class="btn btn-primary btn-large" href="volunteers.html">Volunteers &raquo;</a>
-	    <a class="btn btn-primary btn-large" href="organizations.html">Organizations &raquo;</a>
-		</p>
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+	      <a class="brand" href="index.html">Interview Me</a>
+	      <div class="nav-collapse">
+	        <ul class="nav">
+	          <li class="active"><a href="index.html">Home</a></li>
+	          <li><a href="contact.html">Contact</a></li>
+	        </ul>
+	        <ul class="nav pull-right">
+	          <li><a>{{loginButtons align="left"}}</a></li>
+	        </ul>
+	      </div><!--/.nav-collapse -->
+	    </div>
+	  </div>
 	</div>
+	  
+	<br/>
+	<br/>
+	<br/>
+	<div class="container">
+		<div class="hero-unit">
+		  <h1>Welcome to Interview Me!</h1>
+		  <img src="programming.png" height="260" width="260" align="right">        
+		  <hr color="#94D1CA">
+		  <p>Interview Me is the best way to prepare for an upcoming tech interview through instant mock interviews. We constantly scrape the web for previous interview questions for numerous companies like Facebook, Google, and Apple. Take a demo or sign in with Facebook.
+		  <p>
+		    <br/>
+		    <a class="btn btn-primary btn-large" href="volunteers.html"> Demo Now &raquo;</a>
+		    <br/>
+		    <br/>
+		    <small>*InterviewMe is in no way affiliated with any tech companies here</small>
+			</p>
+		</div>
 </template>
