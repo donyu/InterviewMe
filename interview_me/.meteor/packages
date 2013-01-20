@@ -9,3 +9,6 @@ preserve-inputs
 accounts-ui
 less
 bootstrap
+accounts-password
+accounts-facebook
+accounts-google
